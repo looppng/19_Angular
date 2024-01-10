@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 img">
+      <a [routerLink]="['/books', book.id]">
+        <img
+          ngSrc="{{ book.image }}"
+          alt="Book Cover"
+          class="image"
+          width="350"
+          height="500"
+          priority="true"
+        />
+      </a>
+    </div>
+    <div class="col-6">
+      <div class="content">
+        <a [routerLink]="['/books', book.id]" class="link">
+          <h3 class="name">
+            {{ book.name }}
+          </h3>
+        </a>
+        <h4 class="author mt-3">
+          {{ book.author }}
+        </h4>
+        <p class="date mt-2">{{ book.published }}</p>
+        <div class="liked mt-4" [ngClass]="{liked: book.liked}" >
+          <button (click)="onLikeClick()" [class.like]="book.liked">
+            <img
+              ngSrc="./assets/like.svg"
+              alt="Like"
+              height="20"
+              width="20"
+              priority="true"
+            />
+          </button>
+          <button (click)="onDislikeClick()" [class.dislike]="!book.liked">
+            <img
+              ngSrc="./assets/dislike.svg"
+              alt="Dislike"
+              height="20"
+              width="20"
+              priority="true"
+            />
+          </button>
+        </div>
+        <div class="icons mt-4">
+          <fa-icon (click)="onDelete(book)"  [icon]="faTrash" size="2x" class="icon"></fa-icon>
+          <fa-icon (click)="onEdit(book)" [icon]="faPenToSquare" size="2x" class="icon"></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

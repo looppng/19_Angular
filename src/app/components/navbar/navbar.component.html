@@ -1,0 +1,23 @@
+<nav class="container navigation">
+  <div class="logo">
+    <img
+      ngSrc="./assets/logo.svg"
+      alt="Logo"
+      height="28"
+      width="40"
+      priority="true"
+    />
+  </div>
+  <ul class="links">
+    <li class="list"><a routerLink="/" class="link">Home</a></li>
+    <li class="list"><a routerLink="/about" class="link">About</a></li>
+    <li class="list"><a routerLink="/books" class="link">Books</a></li>
+  </ul>
+  <div class="action">
+    <app-button
+      color="{{ showAddBook ? 'red' : 'green'}}"
+      text="{{ showAddBook ? 'Close' : 'Add'}}"
+      (btnClick)="addBook()"
+    ></app-button>
+  </div>
+</nav>

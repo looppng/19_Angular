@@ -1,0 +1,25 @@
+<section>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-6 img">
+        <img
+          ngSrc="{{ book.image }}"
+          alt="Book Cover"
+          class="image"
+          width="350"
+          height="500"
+          priority="true"
+        />
+      </div>
+      <div class="col-6">
+        <div class="content">
+          <h3 class="author">{{ book.name }}</h3>
+          <h4 class="author">{{ book.author }}</h4>
+          <p class="date">{{ book.published }}</p>
+          <p content="description">{{ book.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</section>

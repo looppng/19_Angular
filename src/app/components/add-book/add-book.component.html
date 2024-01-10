@@ -1,0 +1,15 @@
+<form *ngIf="showAddBook" (ngSubmit)="onSubmit()" class="container mt-3 form">
+  <div class="child">
+    <label for="name" class="label">Book</label>
+    <input type="text" name="name" id="name" [(ngModel)]="name" class="input" placeholder="Add Book name..."/>
+  </div>
+  <div class="child">
+    <label for="author" class="label">Author</label>
+    <input type="text" name="author" id="author" [(ngModel)]="author" class="input" placeholder="Add author name..."/>
+  </div>
+  <div class="child">
+    <label for="image" class="label">ImageUrl</label>
+    <input type="text" name="image" id="image" [(ngModel)]="image" class="input" placeholder="Add book image URL..."/>
+  </div>
+  <input type="submit" value="Save Book" class="btn"/>
+</form>
