@@ -20,7 +20,6 @@ app.use(cors());
 
 app.use(bodyParser.json())
 
-// route for handling requests from the Angular client
 app.get('/api/books', (req, res) => {
   connection.query('SELECT * FROM Books', function (error, results, fields) {
     res.json(results)

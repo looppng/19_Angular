@@ -1,27 +1,41 @@
-# 19Angular
-
+# My Angular CRUD project
+A
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
+
+This repository contains a comprehensive CRUD (Create, Read, Update, Delete) application developed using the Angular framework. The application allows users to interact with a list of items, providing functionalities for viewing, creating, editing, and deleting items.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+Run `node server.js` to run server.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+- Node.js
+- npm or yarn
+- MySQL
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Installation
 
-## Running unit tests
+Clone the repository:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```bash
+   git clone https://github.com/looppng/19_Angular.git
+   cd 19_Angular
+   
+   Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+   Run `node server.js` to run server on port :3001
+   ```
 
-## Running end-to-end tests
+## Database
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+#### Books Table
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **id**: INT
+- **name**: VARCHAR
+- **author**: VARCHAR
+- **published**: DATETIME
+- **liked**: BOOLEAN
+- **image**: TEXT
+- **description**: VARCHAR
