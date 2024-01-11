@@ -53,13 +53,29 @@ app.post('/api/books', (req, res) => {
   const name = req.body.name
   const author = req.body.author
   const image = req.body.image
+  const description = req.body.description
 
 
-  connection.query('INSERT INTO books SET ?', {name: name, author: author, image: image}, function (error, results, fields) {
+  connection.query('INSERT INTO books SET ?', {name: name, author: author, image: image, description: description}, function (error, results, fields) {
     if (error) throw error;
     res.json({message: "Book added successfully!"})
   });
 })
+
+app.put('/api/books/:id', (req, res) => {
+  const bookId = req.params.id;
+
+  const name = req.body.name;
+  const author = req.body.author;
+  const image = req.body.image;
+
+  const updateQuery = 'UPDATE books SET name = ?, author = ?, image = ? WHERE id = ?';
+
+  connection.query(updateQuery, [name, author, image, bookId], function (error, results, fields) {
+
+    res.json({ message: 'Book updated successfully' });
+  });
+});
 
 
 

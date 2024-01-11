@@ -21,6 +21,7 @@ export class AddBookComponent implements OnInit {
   image: string = '';
   liked: boolean = false;
   published: string = '';
+  description: string = '';
   showAddBook!: boolean;
   subscription: Subscription;
 
@@ -44,6 +45,7 @@ export class AddBookComponent implements OnInit {
       image: this.image,
       liked: this.liked,
       published: this.published,
+      description: this.description,
     };
 
     this.onAddBook.emit(newBook);
@@ -51,5 +53,6 @@ export class AddBookComponent implements OnInit {
     this.name = '';
     this.author = '';
     this.image = '';
+    this.description = '';
   }
 }

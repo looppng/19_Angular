@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="container mt-3 form">
+  <div class="child">
+    <label for="name" class="label">Book</label>
+    <input formControlName="name" type="text" name="name" id="name" [(ngModel)]="book.name" class="input" placeholder="Add Book name..."/>
+  </div>
+  <div class="child">
+    <label for="author" class="label">Author</label>
+    <input formControlName="author" type="text" name="author" id="author" [(ngModel)]="book.author" class="input" placeholder="Add author name..."/>
+  </div>
+  <div class="child">
+    <label for="image" class="label">ImageUrl</label>
+    <input formControlName="image" type="text" name="image" id="image" [(ngModel)]="book.image" class="input" placeholder="Add book image URL..."/>
+  </div>
+  <div class="child">
+    <label for="description" class="label">Description</label>
+    <input formControlName="description" type="text" name="description" id="description" [(ngModel)]="book.description" class="input" placeholder="Provide description..."/>
+  </div>
+  <input type="submit" value="Update" class="btn"/>
+</form>

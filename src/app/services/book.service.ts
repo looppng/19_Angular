@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Book } from '../Book';
-import { Observable } from 'rxjs';
+import { catchError, Observable, pipe } from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -23,7 +23,6 @@ export class BookService {
   deleteBook(book: Book): Observable<Book> {
     const url = `${this.apiUrl}/${book.id}`;
     return this.http.delete<Book>(url);
-    // return this.http.get<Book>(this.apiUrl);
   }
 
   getBook(id: string): Observable<Book> {
@@ -35,8 +34,8 @@ export class BookService {
     return this.http.post<Book>(this.apiUrl, book, httpOptions);
   }
 
-  editBook(book: Book): Observable<Book> {
-    const url = `${this.apiUrl}/${book.id}`;
-    return this.http.put<Book>(url, book);
+  editBook(id: string, book: Book): Observable<Book> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.put<Book>(url, book, httpOptions);
   }
 }
